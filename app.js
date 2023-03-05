@@ -1,26 +1,25 @@
-let input = '';
-let resultElement = document.getElementById('result');
+// const operationButton = Array.from(document.querySelectorAll('[data-operation-button]'))
+// const operandButton = Array.from(document.querySelectorAll('[data-operand-button]'))
+// const allClear = document.querySelector('[data-all-clear-button]')
+// const equal = document.querySelector('[data-equal-button]')
 
-function clearInput() {
-  input = '';
-  resultElement.value = '';
-}
+const display = document.querySelector(".display")
+let buttons = Array.from(document.getElementsByClassName("button"))
 
-function appendInput(value) {
-  input += value;
-  resultElement.value = input;
-}
+buttons.map((button) => {
+    button.addEventListener("click", (e) => {
+        switch (e.target.innerText) {
+                case "AC":
+                display.innerText = ''
+                break;
 
-function backspace() {
-  input = input.slice(0, -1);
-  resultElement.value = input || '';
-}
+                case '←':
+                    display.innerText = display.innerText.slice(0, -1)
+                    break;
 
-function calculate() {
-  try {
-    input = eval(input);
-    resultElement.value = input;
-  } catch (error) {
-    resultElement.value = 'Error';
-  }
-}
+                default:
+                display.innerText += e.target.innerText
+                
+        }
+    });
+});
