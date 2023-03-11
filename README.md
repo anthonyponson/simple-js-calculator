@@ -1,1 +1,1 @@
-<a href="https://anthonyponson.github.io/simple-js-calculator/">Click Me here to see calculator</a>
+<a href="https://anthonyponson.github.io/simple-js-calculator/">Click me here to see calculator</a>
